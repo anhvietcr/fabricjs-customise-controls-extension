@@ -13,6 +13,6 @@
   "license": "MIT",
   "main": "dist/customiseControls.js",
   "dependencies": {
-    "fabric": "*"
+    "fabric": "github:anhvietcr/fabric.js#master"
   }
 }
