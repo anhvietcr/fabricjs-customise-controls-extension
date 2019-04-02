@@ -14336,10 +14336,10 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
           center = this.getCenterPoint(),
           // offset added for rotate and scale actions
           coords = absolute ? center : fabric.util.transformPoint(center, vpt),
-          tl  = new fabric.Point(coords.x - offsetX, coords.y - offsetY),
-          tr  = new fabric.Point(tl.x + (currentWidth * cosTh), tl.y + (currentWidth * sinTh)),
+          tl  = new fabric.Point(coords.x - offsetX - 16, coords.y - offsetY + 12),
+          tr  = new fabric.Point((tl.x + (currentWidth * cosTh)) + 28 , (tl.y + (currentWidth * sinTh)) - 26),
           bl  = new fabric.Point(tl.x - (currentHeight * sinTh), tl.y + (currentHeight * cosTh)),
-          br  = new fabric.Point(coords.x + offsetX, coords.y + offsetY);
+          br  = new fabric.Point(coords.x + offsetX - 12, coords.y + offsetY + 12);
       if (!absolute) {
         var ml  = new fabric.Point((tl.x + bl.x) / 2, (tl.y + bl.y) / 2),
             mt  = new fabric.Point((tr.x + tl.x) / 2, (tr.y + tl.y) / 2),
