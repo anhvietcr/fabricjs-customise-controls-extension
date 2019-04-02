@@ -580,25 +580,21 @@
          */
 
         _removeAction: function(e, target) {
+            console.log(this);
             var _this = this;
-            if (this.getActiveGroup() && this.getActiveGroup() !== 'undefined') {
-                this.getActiveGroup().forEachObject(function(o) {
+            if (this.getActiveObjects() && this.getActiveObjects() !== 'undefined') {
+                this.getActiveObjects().filter(function(o) {
                     o.off();
-                    o.remove();
+                    _this.remove(o);
                 });
-                this.discardActiveGroup();
-
-                // as of fabric 1.6.3 necessary for reasons..
-                setTimeout(function() {
-                    _this.deactivateAll();
-                }, 0);
+                this.discardActiveObject();
 
             } else {
                 target.off();
                 target.remove();
 
                 setTimeout(function() {
-                    _this.deactivateAll();
+                    _this.discardActiveObject();
                 }, 0);
             }
         },
