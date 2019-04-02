@@ -206,16 +206,16 @@
 
             // top-left
             this._drawControl('tl', ctx, methodName,
-                left,
-                top,
+                left - 14,
+                top + 12,
                 this.tlIcon,
                 this.tlSettings
             );
 
             // top-right
             this._drawControl('tr', ctx, methodName,
-                left + width,
-                top,
+                left + width + 14,
+                top - 12,
                 this.trIcon,
                 this.trSettings
             );
@@ -230,8 +230,8 @@
 
             // bottom-right
             this._drawControl('br', ctx, methodName,
-                left + width,
-                top + height,
+                left + width - 12,
+                top + height + 14,
                 this.brIcon,
                 this.brSettings
             );
